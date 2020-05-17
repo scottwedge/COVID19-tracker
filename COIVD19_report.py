@@ -28,7 +28,7 @@ def handle_request(request):
 		return False
 
 	if request.status_code == 500 or request.status_code == 501 :
-		error_msg = "We recieved an error on the server side.Please try again after some time"
+		error_msg = "We received an error on the server side.Please try again after some time"
 		error_prompt = Label(screen , text = error_msg , font=("courier", 14), fg = "red" , bg = "black")
 		error_prompt.pack()
 		return False
@@ -41,7 +41,7 @@ def getdata():
 	try:
 		data = requests.get("https://www.worldometers.info/coronavirus/country/" + country_name + "/")
 	except  OSError :
-		error_msg = "Please check you internet connectivity and then try again later."
+		error_msg = "Please check your internet connectivity and then try again later."
 		error_prompt = Label(screen , text = error_msg , font=("courier", 14), fg = "red" , bg = "black")
 		error_prompt.pack()
 		sleep(50)
@@ -56,7 +56,7 @@ def getdata():
 
 
 		if len(numbers) !=3 :
-			error_msg = "No inforamtion found for the given country.\nPlease recheck if the given Country name is valid"
+			error_msg = "No information found for the given country.\nPlease recheck if the given Country name is valid"
 			error_prompt = Label(screen , text = error_msg , font=("courier", 14), fg = "red", bg = "black")
 			error_prompt.pack()
 
